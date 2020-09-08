@@ -27,5 +27,15 @@ func main() {
 		log.Panic(err)
 	}
 
-	fmt.Println(string(bs))
+	fmt.Println("Print JSON", string(bs))
+
+	xp2 := []person{}
+
+	err = json.Unmarshal(bs, &xp2)
+
+	if err != nil {
+		log.Panic(err)
+	}
+
+	fmt.Println("back in GO data structire", xp2)
 }
